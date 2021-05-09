@@ -68,7 +68,7 @@ TimeOfDayFormat timeOfDayFormat({bool alwaysUse24HourFormat = false}) {
       : TimeOfDayFormat.h_colon_mm_space_a;
 }
 
-String _formatDayPeriod(TimeOfDay timeOfDay) {
+String? _formatDayPeriod(TimeOfDay timeOfDay) {
   switch (timeOfDay.period) {
     case DayPeriod.am:
       return "ق.ظ";

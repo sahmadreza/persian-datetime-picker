@@ -27,16 +27,16 @@ const double _headerPaddingLandscape = 16.0;
 class PDatePickerHeader extends StatelessWidget {
   /// Creates a header for use in a date picker dialog.
   const PDatePickerHeader({
-    Key key,
-    @required this.helpText,
-    @required this.titleText,
+    Key? key,
+    required this.helpText,
+    required this.titleText,
     this.titleSemanticsLabel,
-    @required this.titleStyle,
-    @required this.orientation,
+    required this.titleStyle,
+    required this.orientation,
     this.isShort = false,
-    @required this.icon,
-    @required this.iconTooltip,
-    @required this.onIconPressed,
+    required this.icon,
+    required this.iconTooltip,
+    required this.onIconPressed,
   }) : assert(helpText != null),
        assert(orientation != null),
        assert(isShort != null),
@@ -51,10 +51,10 @@ class PDatePickerHeader extends StatelessWidget {
   final String titleText;
 
   /// The semantic label associated with the [titleText].
-  final String titleSemanticsLabel;
+  final String? titleSemanticsLabel;
 
   /// The [TextStyle] that the title text is displayed with.
-  final TextStyle titleStyle;
+  final TextStyle? titleStyle;
 
   /// The orientation is used to decide how to layout its children.
   final Orientation orientation;
@@ -73,10 +73,10 @@ class PDatePickerHeader extends StatelessWidget {
   /// in portrait, and lower left in landscape.
   ///
   /// The available icons are described in [Icons].
-  final IconData icon;
+  final IconData? icon;
 
   /// The text that is displayed for the tooltip of the icon.
-  final String iconTooltip;
+  final String? iconTooltip;
 
   /// Callback when the user taps the icon in the header.
   ///
@@ -94,7 +94,7 @@ class PDatePickerHeader extends StatelessWidget {
     final Color primarySurfaceColor = isDark ? colorScheme.surface : colorScheme.primary;
     final Color onPrimarySurfaceColor = isDark ? colorScheme.onSurface : colorScheme.onPrimary;
 
-    final TextStyle helpStyle = textTheme.overline?.copyWith(
+    final TextStyle? helpStyle = textTheme.overline?.copyWith(
       color: onPrimarySurfaceColor,
     );
 
@@ -184,6 +184,6 @@ class PDatePickerHeader extends StatelessWidget {
           ],
         );
     }
-    return null;
+    return Container();
   }
 }
